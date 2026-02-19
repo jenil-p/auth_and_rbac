@@ -71,9 +71,30 @@ export async function logOutHelper(req, res) {
   return res.status(200).json({ message: "Logout successful" });
 }
 
+export async function getallUsers(req, res) {
+  try {
+    const user = req.user;
+
+    let users;
+
+    if (user.roleName === "admin") {
+      users = await User.find({});
+    } else {
+      return res.status(500).json({ message: "You are not authorized to see all users." });
+    }
+
+    res.status(200).json(users);
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Fetching users failed" });
+  }
+}
+
 // delete user (only admin can do delete user)
 export async function deleteUser(req, res, next) {
   try {
+    console.log("req")
     const { userId } = req.params;
 
     const user = await User.findById(userId);

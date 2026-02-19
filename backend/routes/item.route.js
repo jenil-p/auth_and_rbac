@@ -16,7 +16,7 @@ router.post( "/", checkForAuthenticationCookie("token"), hasPermission("Item", "
 router.get( "/", checkForAuthenticationCookie("token"), hasPermission("Item", "READ"), getItems);
 
 // get one
-router.get("/:id", checkForAuthenticationCookie("token"), hasPermission("Item", "READ"), getItemById);
+router.get("/:id", checkForAuthenticationCookie("token"), hasPermission("Item", "READ"),validateItemOwnership, getItemById);
 
 // update (own)
 router.put( "/:id", checkForAuthenticationCookie("token"), hasPermission("Item", "UPDATE"), validateItemOwnership, updateItem,logAction("Item", "UPDATE", "id"));
