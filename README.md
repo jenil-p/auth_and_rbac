@@ -16,6 +16,8 @@ this application has JWT auth and RBAC with user and admin roles (later can be s
 - **Database:** MongoDB (Mongoose)
 - **Auth:** JWT Authentication
 
+- Backend Design structure **Simple** **MVC** for now. Later we can improve this as give in this readme file (at the end of this file)
+
 ---
 
 ## 📂 Project Structure
