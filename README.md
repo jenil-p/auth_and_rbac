@@ -93,7 +93,7 @@ ADMIN FUNCTIOALITIES
 - CRUD on all entries (created by any user)
 ```
 
-- Protected Functionalities by RBAC (role based access control) and can scal it as well.
+- Protected Functionalities by RBAC (role based access control) and can scale it as well.
 
 #### Testing with Postman
 Collection Link 
