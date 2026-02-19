@@ -93,8 +93,6 @@ npm run dev - Start development server (nodemon)
 
 # Short scalability note
 
-### Db schema
-
 - we can improve its current schema by normalizing it (till BCNF) to get highest scalability without losing the consistency.
 - Later we can make two different applications (one for user and one for admin if they are going to be increasing in numbers) so that trafic will be devided (given that admins also increases say per 100 user an admin)
 - we can do partition of database with suitable stratagy (horizintal or Vertical)
