@@ -74,7 +74,8 @@ npm run dev - Start development server (nodemon)
 ### APIs and Testing
 
 #### REST APIs
-- USER FUNCTIONALITIES
+USER FUNCTIONALITIES
+```
 - signup
 - Login
 - get me
@@ -83,13 +84,16 @@ npm run dev - Start development server (nodemon)
 - Get entries(user's own)
 - Update entry
 - Delete Entry
+```
 
-- ADMIN FUNCTIOALITIES
+ADMIN FUNCTIOALITIES
+```
 - Get all users
 - Delete user
 - CRUD on all entries (created by any user)
+```
 
-Protected Functionalities by RBAC (role based access control) and can scal it as well.
+- Protected Functionalities by RBAC (role based access control) and can scal it as well.
 
 #### Testing with Postman
 Collection Link 
