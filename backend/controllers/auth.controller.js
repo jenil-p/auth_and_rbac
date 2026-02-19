@@ -1,4 +1,5 @@
 import User from "../models/users.model.js";
+import Role from "../models/role.model.js";
 import { createTokenForUser } from "../services/authentication.js";
 
 // register
@@ -6,13 +7,15 @@ export async function createUser(req, res) {
   try {
     const { fullname, email, password } = req.body;
 
+    const userRole = await Role.findOne({ name: "user" });
+
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
       return res.status(409).json({ message: "User already exists" });
     }
 
-    const user = await User.create({ fullname, email, password, role: "user", });
+    const user = await User.create({ fullname, email, password, role: userRole._id, });
 
     return res.status(201).json({
       message: "User created successfully",
@@ -28,7 +31,7 @@ export async function loginUser(req, res) {
   try {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email, isDeleted: false }).select("+password");
+    const user = await User.findOne({ email, isDeleted: false }).populate("role").select("+password");
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
