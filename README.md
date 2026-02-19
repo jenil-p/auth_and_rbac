@@ -1,4 +1,4 @@
-# Entried management 📝
+# Entries management 📝
 
 this application has JWT auth and RBAC with user and admin roles (later can be scalled)
 
