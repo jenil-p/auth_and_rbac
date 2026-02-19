@@ -9,6 +9,9 @@ dotenv.config();
 // auth
 import authRoutes from './routes/auth.route.js';
 
+// item
+import itemRoutes from './routes/item.route.js'
+
 const app = express();
 const PORT = process.env.PORT;
 
@@ -31,6 +34,9 @@ app.use(
 
 // auth
 app.use('/api/v1/auth' , authRoutes);
+
+// Item - secondary entity
+app.use('/api/v1/item' , itemRoutes);
 
 
 app.listen(PORT, () => console.log(`app listening at PORT:${PORT}`));

@@ -1,4 +1,4 @@
-import Item from "../models/Item.js";
+import Item from "../models/item.model.js";
 
 export const validateItemOwnership = async (req, res, next) => {
   try {
