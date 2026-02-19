@@ -94,7 +94,6 @@ export async function getallUsers(req, res) {
 // delete user (only admin can do delete user)
 export async function deleteUser(req, res, next) {
   try {
-    console.log("req")
     const { userId } = req.params;
 
     const user = await User.findById(userId);

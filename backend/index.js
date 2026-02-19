@@ -15,22 +15,23 @@ import itemRoutes from './routes/item.route.js'
 const app = express();
 const PORT = process.env.PORT;
 
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('MongoDB connected successfully.'))
-  .catch(err => console.error('MongoDB connection error:', err));
-
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-
-app.use(express.static('public'));
 app.use(
     cors({
         origin: process.env.DEVELOPMENT_FRONTEND_URL,
         credentials: true,
     })
 );
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.use(express.static('public'));
+
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('MongoDB connected successfully.'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
 
 // auth
 app.use('/api/v1/auth' , authRoutes);
