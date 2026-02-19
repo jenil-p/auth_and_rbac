@@ -20,28 +20,6 @@ this application has JWT auth and RBAC with user and admin roles (later can be s
 
 ---
 
-## 📂 Project Structure
-
-```text
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   ├── vite.config.js
-│   └── .env.example
-| 
-├── backend/
-│   ├── routes/
-│   ├── controllers/
-│   ├── models/
-│   ├── middlewares/
-│   ├── server.js
-│   ├── package.json
-│   └── .env.example
-|
-└── README.md
-
-```
 ## 🔐 Environment Variables
 This project uses environment variables for configuration. We have included .env.example files in the directories.
 
@@ -91,6 +69,32 @@ npm run dev - Start development server
 ### Backend:
 ```text
 npm run dev - Start development server (nodemon)
+```
+
+### APIs and Testing
+
+#### REST APIs
+- USER FUNCTIONALITIES
+- signup
+- Login
+- get me
+- Logout
+- Create Entry
+- Get entries(user's own)
+- Update entry
+- Delete Entry
+
+- ADMIN FUNCTIOALITIES
+- Get all users
+- Delete user
+- CRUD on all entries (created by any user)
+
+Protected Functionalities by RBAC (role based access control) and can scal it as well.
+
+#### Testing with Postman
+Collection Link 
+```
+https://www.postman.com/jenilp/public-testings-of-apis/collection/40573601-9e79f41d-beb2-4019-8999-1474775b7ea3/?action=share&creator=40573601
 ```
 
 # Short scalability note
